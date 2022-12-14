@@ -1,1 +1,179 @@
+@import "reset";
 @import "boxes";
+
+body {
+  background: url(../images/bg-intro-mobile.png), $primary;
+  background-size: cover;
+  @include flexBox($jc: space-between);
+  height: 100vh;
+  width: 100%;
+}
+
+.main {
+  @include flexBox;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+
+  &__info {
+    @include flexBox;
+    gap: 1rem;
+    color: $light;
+    padding: 4rem 0;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+
+  &__paragraph {
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
+  &__paragraph--offer {
+    color: $light;
+    font-weight: 300;
+    background: $accent;
+    padding: 1.5rem 3rem;
+    border-radius: 0.6rem;
+    width: 100%;
+    box-shadow: 0 0.4rem 0 $shadow;
+  }
+
+  &__span {
+    font-weight: 700;
+  }
+
+  &__offer {
+    @include flexBox;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__form {
+    background: $light;
+    border-radius: 0.6rem;
+    @include flexBox;
+    padding: 1.4rem;
+    width: 100%;
+    gap: 1rem;
+    box-shadow: 0 0.4rem 0 $shadow;
+  }
+
+  &__input {
+    border: 1px solid $grey;
+    border-radius: 0.4rem;
+    height: 3rem;
+    width: 100%;
+    padding: 1rem;
+    color: $dark;
+    font-weight: 600;
+    outline: none;
+  }
+
+  &__cta {
+    background: $cta-bg;
+    width: 100%;
+    @include flexBox;
+    padding: 1rem;
+    color: $light;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.3rem 0 $cta-shadow;
+
+    &:hover {
+      filter: brightness(1.1) saturate(0.8);
+    }
+  }
+
+  &__paragraph--form {
+    color: $grey;
+    font-weight: 300;
+    font-size: 0.8em;
+  }
+
+  &__link {
+    color: $primary;
+    font-weight: 600;
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.footer {
+  @include flexBox;
+  padding: 1rem;
+  &__paragraph {
+    color: $light;
+    font-size: 0.6em;
+  }
+  &__link {
+    font-weight: 600;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+[data-title]:after {
+  content: attr(data-title);
+  background: $light;
+  color: $primary;
+  font-size: 14px;
+  font-family: Raleway;
+  position: absolute;
+  top: -1.5rem;
+  left: 1rem;
+  padding: 0 0.3rem;
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 99999;
+  visibility: hidden;
+  border-radius: 6px;
+}
+[data-title] {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: url(../images/bg-intro-desktop.png), $primary;
+    justify-content: center;
+  }
+
+  .main {
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+
+    &__info {
+      text-align: start;
+    }
+    &__title {
+      font-size: 3em;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    gap: 6rem;
+    max-width: 70rem;
+  }
+
+  .footer__paragraph {
+    font-size: 1em;
+  }
+}
