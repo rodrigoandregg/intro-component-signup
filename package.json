@@ -8,6 +8,6 @@
     "watch": "sass --watch ./src/sass:./src/css"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rodrigo Andre Gutierrez",
   "license": "ISC"
 }
