@@ -59,11 +59,11 @@ body {
     @include flexBox;
     padding: 1.4rem;
     width: 100%;
-    gap: 1rem;
     box-shadow: 0 0.4rem 0 $shadow;
   }
 
-  &__input {
+  &__container--form {
+    @include flexBox($fd: row);
     border: 1px solid $grey;
     border-radius: 0.4rem;
     height: 3rem;
@@ -72,6 +72,30 @@ body {
     color: $dark;
     font-weight: 600;
     outline: none;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1rem;
+    color: $dark;
+    font-weight: 600;
+    outline: none;
+  }
+
+  &__icon {
+    width: 2rem;
+    opacity: 0;
+  }
+
+  &__error {
+    color: $primary;
+    font-size: 0.8em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: end;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    opacity: 0;
   }
 
   &__cta {
@@ -85,6 +109,7 @@ body {
     letter-spacing: 1px;
     border-radius: 0.4rem;
     box-shadow: 0 0.3rem 0 $cta-shadow;
+    cursor: pointer;
 
     &:hover {
       filter: brightness(1.1) saturate(0.8);
@@ -95,6 +120,7 @@ body {
     color: $grey;
     font-weight: 300;
     font-size: 0.8em;
+    margin-top: 1rem;
   }
 
   &__link {

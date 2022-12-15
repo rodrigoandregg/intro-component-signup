@@ -22,10 +22,26 @@
         thereafter
       </p>
       <form class="main__form">
-        <input type="text" name="name" placeholder="First Name" id="name" class="main__input">
-        <input type="text" name="lastName" placeholder="Last Name" id="lastName" class="main__input">
-        <input type="email" name="email" placeholder="Email Address" id="email" class="main__input">
-        <input type="password" name="password" placeholder="Password" id="password" class="main__input">
+        <div class="main__container--form">
+          <input type="text" name="name" placeholder="First Name" id="name" class="main__input">
+          <img src="./src/images/svg/icon-error.svg" alt="" class="main__icon">
+        </div>
+        <p class="main__error">First Name cannot be empty</p>
+        <div class="main__container--form">
+          <input type="text" name="lastName" placeholder="Last Name" id="lastName" class="main__input">
+          <img src="./src/images/svg/icon-error.svg" alt="" class="main__icon">
+        </div>
+        <p class="main__error">Last Name cannot be empty</p>
+        <div class="main__container--form">
+          <input type="email" name="email" placeholder="Email Address" id="email" class="main__input">
+          <img src="./src/images/svg/icon-error.svg" alt="" class="main__icon">
+        </div>
+        <p class="main__error main__error--email">Looks like this is not an email</p>
+        <div class="main__container--form">
+          <input type="password" name="password" placeholder="Password" id="password" class="main__input">
+          <img src="./src/images/svg/icon-error.svg" alt="" class="main__icon">
+        </div>
+        <p class="main__error">Password cannot be empty</p>
         <button type="submit" class="main__cta">Claim your free trial</button>
         <p class="main__paragraph main__paragraph--form">By clicking the button, you are agreeing to our <a href="#"
             class="main__link" data-title="terms and services" target="_blank">Terms
